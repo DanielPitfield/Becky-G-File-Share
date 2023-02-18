@@ -2,8 +2,6 @@ const express = require("express");
 const app = express();
 const port = 5000;
 
-const path = require("path");
-
 const multer = require("multer");
 const MAX_FILE_SIZE_MB = 10;
 // The maximum number of files which can be uploaded at once
