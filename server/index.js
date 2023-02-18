@@ -4,7 +4,7 @@ const port = 5000;
 
 const multer = require("multer");
 // Where are the uploaded images stored?
-const upload = multer({ dest: "Images/" });
+const upload = multer({ dest: "/Images/" });
 // The maximum number of files which can be uploaded at once
 const MAX_NUM_FILES = 10;
 
