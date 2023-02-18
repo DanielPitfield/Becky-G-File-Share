@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const UploadForm = () => {
-  const [selectedFileNames, setSelectedFileNames] = useState("");
+  const [selectedFileNames, setSelectedFileNames] = useState([]);
 
   return (
     <>
@@ -14,10 +14,17 @@ const UploadForm = () => {
         encType="multipart/form-data"
       >
         <label className="file-input">
-          <input type="file" name="fileInput" multiple onChange={(event) => setSelectedFileNames(event.target.value)} />
+          <input
+            type="file"
+            name="fileInput"
+            multiple
+            onChange={(event) => {
+              setSelectedFileNames(Array.from(event.target.files).map((file) => file.name));
+            }}
+          />
           Select Files
         </label>
-        <span className="selected-file-names">{selectedFileNames}</span>
+        <span className="selected-file-names">{selectedFileNames.join(", ")}</span>
 
         <input className="submit-button" type="submit" value="Upload" />
       </form>
