@@ -27,8 +27,6 @@ app.post("/upload", upload.array("fileInput", MAX_NUM_FILES), (req, res) => {
   for (const file of req.files) {
     console.log(file);
   }
-
-  res.send("Files uploaded");
 });
 
 app.listen(port, () => {
