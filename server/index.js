@@ -19,7 +19,7 @@ const storage = multer.diskStorage({
   },
 });
 
-const upload = multer({ storage: storage, limits: { fileSize: Math.pow(MAX_FILE_SIZE_MB, 6) } });
+const upload = multer({ storage: storage, limits: { fileSize: MAX_FILE_SIZE_MB * Math.pow(1024, 2) } });
 
 app.post("/upload", upload.array("fileInput", MAX_NUM_FILES), (req, res) => {
   for (const file of req.files) {
