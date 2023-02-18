@@ -1,5 +1,5 @@
-import "./App.css";
-import UploadForm from "./UploadForm";
+import "./styles/App.css";
+import UploadForm from "./components/UploadForm";
 
 const App = () => {
   return (
