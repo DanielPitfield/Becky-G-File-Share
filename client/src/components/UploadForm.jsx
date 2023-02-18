@@ -1,7 +1,7 @@
 const UploadForm = () => {
   return (
-    <form action="/" method="POST" encType="multipart/form-data">
-      <input type="file" name="upload" multiple />
+    <form action="/upload" method="POST" encType="multipart/form-data">
+      <input type="file" name="fileInput" />
       <input type="submit" value="Upload" />
     </form>
   );
