@@ -3,8 +3,9 @@ const app = express();
 const port = 5000;
 
 const multer = require("multer");
+const MAX_FILE_SIZE_MB = 10; 
 // Where are the uploaded images stored?
-const upload = multer({ dest: "Images/" });
+const upload = multer({ dest: "Images/", limits: { fileSize: Math.pow(MAX_FILE_SIZE_MB, 6) } });
 // The maximum number of files which can be uploaded at once
 const MAX_NUM_FILES = 10;
 
