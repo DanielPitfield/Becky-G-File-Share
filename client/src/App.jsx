@@ -1,7 +1,18 @@
+import { useEffect, useState } from "react";
 import "./App.css";
 
 const App = () => {
-  return <div></div>;
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    (async () => {
+      const response = await fetch("/api");
+      const data = await response.json();
+      setMessage(data);
+    })();
+  }, []);
+
+  return <div>{message ?? "-"}</div>;
 };
 
 export default App;
