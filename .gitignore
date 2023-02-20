@@ -3,6 +3,9 @@
 /.pnp
 .pnp.js
 
+# images
+server/Images
+
 # production
 /build
 dist
