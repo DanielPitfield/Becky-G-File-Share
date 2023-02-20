@@ -24,6 +24,7 @@ lerna-debug.log*
 .env
 .env*.local
 *.local
+dbConfig.js
 
 # Editor directories and files
 .vscode/*
