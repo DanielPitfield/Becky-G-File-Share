@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const port = 5000;
 
+const sql = require("./dbOperation");
+
 const multer = require("multer");
 const MAX_FILE_SIZE_MB = 10;
 // The maximum number of files which can be uploaded at once
@@ -20,6 +22,10 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage: storage, limits: { fileSize: MAX_FILE_SIZE_MB * Math.pow(1024, 2) } });
+
+app.get("/testconnect", (req, res) => {
+  sql.testConnection();
+});
 
 app.post("/upload", upload.array("fileInput", MAX_NUM_FILES), (req, res) => {
   for (const file of req.files) {
